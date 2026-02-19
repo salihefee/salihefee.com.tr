@@ -43,20 +43,34 @@ const ProfileCard = () => {
                     }
                 </div>
                 <div className="socials">
-                    <SocialButton link="https://github.com/salihefee" image={github} service="GitHub" account="salihefee" />
+                    <SocialButton
+                        link="https://github.com/salihefee"
+                        image={github}
+                        service="GitHub"
+                        account="salihefee"
+                        enabled={true}
+                    />
                     <SocialButton
                         link="https://www.last.fm/user/pthreadgc2"
                         image={lastfm}
                         service="Last.fm"
                         account="pthreadgc2"
+                        enabled={false}
                     />
                     <SocialButton
                         link="https://www.youtube.com/channel/UCCML6jkUGPjbirZDU6_b-wA"
                         image={youtube}
                         service="YouTube"
                         account="@salihefee"
+                        enabled={true}
                     />
-                    <SocialButton link="https://osu.ppy.sh/u/salihefee" image={osu} service="osu!" account="salihefee" />
+                    <SocialButton
+                        link="https://osu.ppy.sh/u/salihefee"
+                        image={osu}
+                        service="osu!"
+                        account="salihefee"
+                        enabled={true}
+                    />
                 </div>
             </div>
         </>

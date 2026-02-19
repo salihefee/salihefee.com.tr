@@ -1,52 +1,72 @@
 a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 .button {
-    display: flex;
-    flex-direction: row;
-    background-color: #141313;
-    padding: 12px;
-    border-radius: 8px;
-    gap: 10px;
-    min-width: 245px;
-    min-height: 83px;
-    flex: 1;
-    align-items: center;
-    transition: all 0.2s ease-in-out;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    box-sizing: border-box
+  display: flex;
+  flex-direction: row;
+  background-color: #141313;
+  padding: 12px;
+  border-radius: 8px;
+  gap: 10px;
+  min-width: 245px;
+  min-height: 83px;
+  flex: 1;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
 }
 
-.button:hover {
-    /* transform: scale(1.02); */
-    /* opacity: 0.9; */
-    box-shadow: 0 0 3px rgba(255, 255, 255, 1);
-    /* border: 1px solid white; */
+.button-disabled {
+  cursor: not-allowed;
+  /* We remove pointer-events: none so the JS listeners can still fire */
+  pointer-events: auto; 
+  opacity: 0.6; /* Optional: visual hint it's disabled */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+.button-disabled:active {
+  transform: scale(0.98);
+  transition: transform 0.01s ease-in-out;
+}
+
+/* .button.pressed {
+  transform: scale(0.98);
+  transition: transform 0.1s ease-in-out;
+} */
+
+.button:not(.button-disabled):hover {
+  /* transform: scale(1.02); */
+  /* opacity: 0.9; */
+  box-shadow: 0 0 3px rgba(255, 255, 255, 1);
+  /* border: 1px solid white; */
 }
 
 .button img {
-    height: 55px;
+  height: 55px;
 }
 
 .button .info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .button .service {
-    font-weight: bold;
-    font-size: 27px;
+  font-weight: bold;
+  font-size: 27px;
 }
 
 .button .account {
-    font-size: 12.5px;
+  font-size: 12.5px;
 }
 
 .light {
-    font-weight: 400;
-    font-style: italic;
-    opacity: 60%;
+  font-weight: 400;
+  font-style: italic;
+  opacity: 60%;
 }
