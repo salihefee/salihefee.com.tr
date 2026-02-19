@@ -31,7 +31,7 @@ a {
 
 .button-disabled:active {
   transform: scale(0.98);
-  transition: transform 0.01s ease-in-out;
+  transition: transform 0.03s ease-in-out;
 }
 
 /* .button.pressed {
