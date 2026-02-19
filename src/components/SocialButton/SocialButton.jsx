@@ -1,4 +1,4 @@
-import { useState } from "react"; // Added useState
+import { useState } from "react";
 import "./SocialButton.css";
 import PropTypes from "prop-types";
 
@@ -8,7 +8,6 @@ const SocialButton = ({ link, image, service, account, enabled }) => {
   const handleFeedback = () => {
     if (!enabled) {
       setIsPressed(true);
-      // Ensure the shrink is visible for at least 100ms
       setTimeout(() => setIsPressed(false), 100);
     }
   };
@@ -19,12 +18,19 @@ const SocialButton = ({ link, image, service, account, enabled }) => {
     }
   };
 
+  const handleContextMenu = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  }
+
   return (
     <a
       href={enabled ? link : undefined}
       onClick={handleClick}
-      onMouseDown={handleFeedback} // Trigger on mouse click start
-      onTouchStart={handleFeedback} // Trigger on mobile touch start
+      onMouseDown={handleFeedback}
+      onTouchStart={handleFeedback}
+      onContextMenu={handleContextMenu}
       className={!enabled ? "disabled-link" : ""}
       aria-disabled={!enabled}
       style={{ cursor: enabled ? "pointer" : "not-allowed" }}

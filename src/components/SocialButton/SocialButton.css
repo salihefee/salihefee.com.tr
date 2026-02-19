@@ -21,9 +21,8 @@ a {
 
 .button-disabled {
   cursor: not-allowed;
-  /* We remove pointer-events: none so the JS listeners can still fire */
   pointer-events: auto; 
-  opacity: 0.6; /* Optional: visual hint it's disabled */
+  opacity: 0.6;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   user-select: none;
